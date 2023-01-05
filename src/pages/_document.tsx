@@ -7,7 +7,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head></Head>
+        <Head>
+          <meta property="twitter:creator" content="@gregskril" />
+          <meta property="twitter:card" content="summary_large_image" />
+        </Head>
         <body>
           <Main />
           <NextScript />

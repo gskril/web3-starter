@@ -10,9 +10,6 @@ export default function Home() {
         <meta property="og:image" content="" />
         <meta property="og:title" content="" />
         <meta property="og:description" content="" />
-
-        <meta property="twitter:creator" content="@gregskril" />
-        <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
       <main></main>
