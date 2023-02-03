@@ -20,7 +20,7 @@
     "react-dom": "18.2.0",
     "react-is": "^18.2.0",
     "styled-components": "^5.3.6",
-    "wagmi": "^0.10.10"
+    "wagmi": "^0.11.3"
   },
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^4.0.2",
