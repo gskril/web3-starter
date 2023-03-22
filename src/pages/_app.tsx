@@ -4,8 +4,8 @@ import PlausibleProvider from 'next-plausible'
 import type { AppProps } from 'next/app'
 import { WagmiConfig } from 'wagmi'
 
-import { chains, wagmiClient } from '../providers'
-import '../styles/style.scss'
+import { chains, wagmiClient } from '@/providers'
+import '@/styles/style.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
