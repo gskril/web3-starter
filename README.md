@@ -5,7 +5,7 @@ This is a starter template for building web3 projects using my preferred stack:
 - Next.js
 - Styled Components
 - Styled JSX (with Sass support)
-- Ethers
+- Viem
 - Wagmi
 - RainbowKit
 - Plausible Analytics
