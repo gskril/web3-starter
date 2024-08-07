@@ -1,0 +1,32 @@
+{
+  "name": "contracts",
+  "private": true,
+  "scripts": {
+    "dev": "hardhat node",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "prettier": "prettier --write .",
+    "deploy:base": "hardhat run scripts/deploy.ts --network base",
+    "deploy:baseSepolia": "hardhat run scripts/deploy.ts --network baseSepolia",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomicfoundation/hardhat-toolbox-viem": "^1.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.7",
+    "@nomicfoundation/hardhat-viem": "^1.0.4",
+    "@types/chai": "^4.3.16",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.4.1",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.4",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.12",
+    "ts-node": "^10.9.2",
+    "viem": "^1.21.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}
