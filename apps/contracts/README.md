@@ -1,6 +1,6 @@
 # Contracts
 
-Hardhat project for building smart contracts. The deploy script uses CREATE2 to easily mine a vanity address.
+Hardhat project for building smart contracts. The deploy script uses CREATE2 to easily mine a vanity address and automatically saves deployment data (address, ABI, constructor arguments) to the `deployments/{chainId}/` directory.
 
 ## Local Development
 

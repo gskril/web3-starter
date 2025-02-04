@@ -1,7 +1,9 @@
 import hre from 'hardhat'
 import { encodeAbiParameters } from 'viem/utils'
+import { Contract } from 'ethers'
 
 import { generateSaltAndDeploy } from './lib/create2'
+import { saveDeployment } from './lib/saveDeployment'
 
 async function main() {
   const contractName = 'Contract'
@@ -15,7 +17,7 @@ async function main() {
     constructorArguments
   )
 
-  const { address } = await generateSaltAndDeploy({
+  const { address, contract } = await generateSaltAndDeploy({
     vanity: '0x000',
     encodedArgs,
     contractName,
@@ -24,6 +26,10 @@ async function main() {
   })
 
   console.log(`Deployed ${contractName} to ${address}`)
+
+  // Save deployment data
+  const chainId = (await hre.ethers.provider.getNetwork()).chainId
+  await saveDeployment(contract as Contract, Number(chainId), constructorArguments)
 
   try {
     // Wait 30 seconds for block explorers to index the deployment

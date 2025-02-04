@@ -96,5 +96,9 @@ export async function generateSaltAndDeploy({
 
   await publicClient.waitForTransactionReceipt({ hash: deployTx })
 
-  return { salt, address: expectedAddress }
+  // Get the contract instance
+  const Contract = await hre.ethers.getContractFactory(contractName)
+  const contract = Contract.attach(expectedAddress)
+
+  return { salt, address: expectedAddress, contract }
 }
