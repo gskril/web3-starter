@@ -15,11 +15,12 @@
     "clsx": "^2.1.1",
     "next": "^15.1.5",
     "pino-pretty": "^13.0.0",
+    "porto": "^0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
-    "viem": "^2.22.10",
-    "wagmi": "^2.14.8"
+    "viem": "^2.37.5",
+    "wagmi": "^2.16.9"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
