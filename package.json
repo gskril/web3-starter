@@ -1,17 +1,15 @@
 {
-  "name": "monorepo",
-  "private": true,
-  "scripts": {
-    "prettier": "pnpm --parallel prettier"
-  },
+  "name": "web3-starter",
+  "scripts": {},
+  "packageManager": "pnpm@10.15.1",
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=9"
+    "node": ">=22",
+    "pnpm": ">=10"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
-    "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.10",
-    "typescript": "^5"
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "prettier": "^3.9.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "typescript": "^6.0.3"
   }
 }
