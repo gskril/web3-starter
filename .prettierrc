@@ -11,14 +11,5 @@
   ],
   "importOrder": ["<THIRD_PARTY_MODULES>", "^@/", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "overrides": [
-    {
-      "files": "apps/contracts/src/*.sol",
-      "options": {
-        "tabWidth": 4,
-        "singleQuote": false
-      }
-    }
-  ]
+  "importOrderSortSpecifiers": true
 }

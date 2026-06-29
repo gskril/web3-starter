@@ -1,3 +1,3 @@
-# Web3 Monorepo Template
+# Web3 Project Template
 
-This is an opinionated monorepo template for web3 projects. It uses Hardhat for [smart contracts](./apps/contracts/README.md) and Next.js for the [web app](./apps/web/README.md).
+This is an opinionated monorepo template for web3 projects. It uses Foundry for [smart contracts](./contracts/README.md) and Next.js for the [web app](./apps/web/README.md).
