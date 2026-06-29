@@ -1,15 +1,36 @@
 {
   "name": "web3-starter",
-  "scripts": {},
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"*.{ts,json,html}\""
+  },
   "packageManager": "pnpm@10.15.1",
   "engines": {
     "node": ">=22",
     "pnpm": ">=10"
   },
+  "dependencies": {
+    "@tanstack/react-query": "5.101.2",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "viem": "2.53.1",
+    "wagmi": "2.19.5"
+  },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
-    "prettier": "^3.9.1",
-    "prettier-plugin-tailwindcss": "^0.8.0",
-    "typescript": "^6.0.3"
+    "@tailwindcss/vite": "4.3.1",
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@types/node": "26.0.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "4.7.0",
+    "prettier": "3.9.1",
+    "prettier-plugin-tailwindcss": "0.8.0",
+    "tailwindcss": "4.3.1",
+    "typescript": "6.0.3",
+    "vite": "7.3.6"
   }
 }
