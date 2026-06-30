@@ -11,8 +11,8 @@ env:
   FOUNDRY_PROFILE: ci
 
 jobs:
-  check:
-    name: Foundry project
+  contracts:
+    name: Foundry
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -25,9 +25,6 @@ jobs:
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
 
-      - name: Show Forge version
-        run: forge --version
-
       - name: Run Forge fmt
         run: forge fmt --check
 
@@ -36,3 +33,32 @@ jobs:
 
       - name: Run Forge tests
         run: forge test -vvv
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          submodules: recursive
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm generate
+      - name: Check generated contracts are up to date
+        run: git diff --exit-code src/generated/
+      - run: pnpm build

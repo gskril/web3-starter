@@ -6,7 +6,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"*.{ts,json,html}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"*.{ts,json,html}\" \"wagmi.config.ts\"",
+    "generate": "wagmi generate",
+    "generate:watch": "wagmi generate --watch",
+    "contracts:build": "forge build",
+    "contracts:deploy": "forge script contracts/script/Counter.s.sol:CounterScript --rpc-url anvil --broadcast"
   },
   "packageManager": "pnpm@10.15.1",
   "engines": {
@@ -27,6 +31,7 @@
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "4.7.0",
+    "@wagmi/cli": "^2.10.0",
     "prettier": "3.9.1",
     "prettier-plugin-tailwindcss": "0.8.0",
     "tailwindcss": "4.3.1",

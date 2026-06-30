@@ -1,49 +1,60 @@
-# Web3 Project Template
+# Web3 Starter
 
-This is an opinionated monorepo template for web3 projects. It uses Foundry for smart contracts and Vite for the web app.
+Foundry for contracts, Vite + React + [wagmi](https://wagmi.sh/) for the frontend. Contract ABIs and deployment addresses are generated into `src/generated/contracts.ts` via [@wagmi/cli](https://wagmi.sh/cli).
 
----
+## Prerequisites
 
-## Contracts
+- [Node.js](https://nodejs.org/) 22+
+- [pnpm](https://pnpm.io/) 10+
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
 
-[Foundry](https://book.getfoundry.sh/) is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.
-
-### Usage
-
-Build
+## Setup
 
 ```shell
-$ forge build
+git clone --recurse-submodules https://github.com/gskril/web3-starter
+cd web3-starter
+pnpm install
+cp .env.example .env
+forge build
 ```
 
-Test
+If you already cloned without submodules: `git submodule update --init --recursive`
+
+## Development
+
+Typical flow when working against a fork:
 
 ```shell
-$ forge test
+# Terminal 1 — fork (set FORK_RPC_URL in .env first)
+anvil --fork-url $FORK_RPC_URL
+
+# Terminal 2 — deploy, generate ABIs/addresses, run app
+pnpm contracts:deploy
+pnpm generate
+pnpm dev
 ```
 
-Format
+Run `pnpm generate` after changing contracts (and commit the updated file). Run it again after deploys to pick up local addresses. Import from `@/generated/contracts` in your components — see [docs/development.md](docs/development.md).
 
-```shell
-$ forge fmt
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start Vite |
+| `pnpm build` | Production build |
+| `pnpm generate` | Regenerate `src/generated/contracts.ts` (commit after ABI changes) |
+| `pnpm generate:watch` | Regenerate on contract/broadcast changes |
+| `forge test` | Run contract tests |
+| `forge fmt` | Format Solidity |
+
+## Layout
+
 ```
-
----
-
-## Web App
-
-A lightweight web app built with Vite and React, using [wagmi](https://wagmi.sh/) for EVM integration.
-
-### Usage
-
-Start the development server
-
-```shell
-$ pnpm dev
-```
-
-Build the web app for production
-
-```shell
-$ pnpm build
+contracts/src/     Solidity source
+contracts/script/  Deploy scripts
+contracts/out/        Build artifacts (gitignored)
+contracts/broadcast/  Deploy records (gitignored)
+src/generated/        Generated ABIs + addresses (committed)
+src/               React app
+wagmi.config.ts    wagmi CLI config
 ```

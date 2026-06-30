@@ -7,4 +7,9 @@ libs = ["contracts/lib"]
 cache_path = "contracts/cache"
 broadcast = "contracts/broadcast"
 
+[rpc_endpoints]
+anvil = "${ANVIL_RPC_URL}"
+fork = "${FORK_RPC_URL}"
+sepolia = "${SEPOLIA_RPC_URL}"
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
