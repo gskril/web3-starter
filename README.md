@@ -30,18 +30,19 @@ anvil --fork-url $FORK_RPC_URL
 
 # Terminal 2 — deploy, generate ABIs/addresses, run app
 pnpm contracts:deploy
+pnpm generate
 pnpm dev
 ```
 
-`pnpm dev` runs `wagmi generate` first, which reads Foundry artifacts and the latest broadcast addresses. Import from `@/generated/contracts` in your components — see [docs/development.md](docs/development.md).
+Run `pnpm generate` after changing or deploying contracts. Import from `@/generated/contracts` in your components — see [docs/development.md](docs/development.md).
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `pnpm dev` | Generate contracts + start Vite |
-| `pnpm build` | Generate contracts + production build |
-| `pnpm generate` | Regenerate `src/generated/contracts.ts` |
+| `pnpm dev` | Start Vite |
+| `pnpm build` | Production build |
+| `pnpm generate` | Regenerate `src/generated/contracts.ts` (run after contract changes or deploys) |
 | `pnpm generate:watch` | Regenerate on contract/broadcast changes |
 | `forge test` | Run contract tests |
 | `forge fmt` | Format Solidity |

@@ -10,9 +10,7 @@
     "generate": "wagmi generate",
     "generate:watch": "wagmi generate --watch",
     "contracts:build": "forge build",
-    "contracts:deploy": "forge script contracts/script/Counter.s.sol:CounterScript --rpc-url anvil --broadcast",
-    "predev": "wagmi generate",
-    "prebuild": "wagmi generate"
+    "contracts:deploy": "forge script contracts/script/Counter.s.sol:CounterScript --rpc-url anvil --broadcast"
   },
   "packageManager": "pnpm@10.15.1",
   "engines": {

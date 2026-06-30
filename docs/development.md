@@ -25,9 +25,17 @@ This runs `forge script` against the `anvil` RPC endpoint (`http://127.0.0.1:854
 pnpm generate
 ```
 
-Or let `pnpm dev` / `pnpm build` do it automatically via `predev` / `prebuild`.
+Run this after contract changes or deploys — not on every `pnpm dev`.
 
-5. Connect your wallet to `http://127.0.0.1:8545`, chain ID **31337**.
+5. Start the app:
+
+```shell
+pnpm dev
+```
+
+6. Connect your wallet to `http://127.0.0.1:8545`, chain ID **31337**.
+
+Use `pnpm generate:watch` in a separate terminal if you want regeneration while editing contracts.
 
 ### Chain ID
 
