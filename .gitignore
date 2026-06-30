@@ -1,7 +1,11 @@
 node_modules
 dist
 .DS_Store
-.env
+.env*
+!.env.example
+
+# Generated from contracts (pnpm generate)
+src/generated/
 
 # Foundry
 contracts/out
