@@ -4,9 +4,6 @@ dist
 .env*
 !.env.example
 
-# Generated from contracts (pnpm generate)
-src/generated/
-
 # Foundry
 contracts/out
 contracts/cache

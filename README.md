@@ -34,7 +34,7 @@ pnpm generate
 pnpm dev
 ```
 
-Run `pnpm generate` after changing or deploying contracts. Import from `@/generated/contracts` in your components — see [docs/development.md](docs/development.md).
+Run `pnpm generate` after changing contracts (and commit the updated file). Run it again after deploys to pick up local addresses. Import from `@/generated/contracts` in your components — see [docs/development.md](docs/development.md).
 
 ## Commands
 
@@ -42,7 +42,7 @@ Run `pnpm generate` after changing or deploying contracts. Import from `@/genera
 |---------|-------------|
 | `pnpm dev` | Start Vite |
 | `pnpm build` | Production build |
-| `pnpm generate` | Regenerate `src/generated/contracts.ts` (run after contract changes or deploys) |
+| `pnpm generate` | Regenerate `src/generated/contracts.ts` (commit after ABI changes) |
 | `pnpm generate:watch` | Regenerate on contract/broadcast changes |
 | `forge test` | Run contract tests |
 | `forge fmt` | Format Solidity |
@@ -52,9 +52,9 @@ Run `pnpm generate` after changing or deploying contracts. Import from `@/genera
 ```
 contracts/src/     Solidity source
 contracts/script/  Deploy scripts
-contracts/out/     Build artifacts (gitignored)
+contracts/out/        Build artifacts (gitignored)
 contracts/broadcast/  Deploy records (gitignored)
-src/generated/     Generated ABIs + addresses (gitignored)
+src/generated/        Generated ABIs + addresses (committed)
 src/               React app
 wagmi.config.ts    wagmi CLI config
 ```

@@ -43,7 +43,16 @@ Anvil defaults to chain ID `31337`. The wagmi config expects this. If you start 
 
 ## Generated contracts
 
-`pnpm generate` writes `src/generated/contracts.ts` with typed ABIs and addresses from Foundry broadcasts. When you add or change contracts in `contracts/src/`, re-run generate — no wagmi config changes needed.
+`pnpm generate` writes `src/generated/contracts.ts` with typed ABIs and addresses from Foundry broadcasts. **Commit this file when contract ABIs change.** After a local fork deploy, regenerate to pick up addresses — those are for local use and usually shouldn't be committed.
+
+When you add or change contracts in `contracts/src/`:
+
+```shell
+pnpm generate
+git add src/generated/contracts.ts
+```
+
+No wagmi config changes needed.
 
 After a deploy, the file exports addresses keyed by chain ID:
 
