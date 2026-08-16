@@ -17,8 +17,8 @@
     "@tanstack/react-query": "5.101.2",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "viem": "2.53.1",
-    "wagmi": "2.19.5"
+    "viem": "2.55.15",
+    "wagmi": "3.7.6"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.1",
