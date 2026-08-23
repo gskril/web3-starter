@@ -17,7 +17,7 @@
     "@tanstack/react-query": "5.101.2",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "viem": "2.55.15",
+    "viem": "2.55.19",
     "wagmi": "3.7.6"
   },
   "devDependencies": {
@@ -32,5 +32,12 @@
     "tailwindcss": "4.3.1",
     "typescript": "6.0.3",
     "vite": "7.3.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "@walletconnect/ethereum-provider": "^2.23.10",
+      "@walletconnect/universal-provider": "^2.23.10",
+      "@walletconnect/utils": "^2.23.10"
+    }
   }
 }
