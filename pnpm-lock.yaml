@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@walletconnect/ethereum-provider': ^2.23.10
-  '@walletconnect/universal-provider': ^2.23.10
-  '@walletconnect/utils': ^2.23.10
-
 importers:
 
   .:
@@ -658,7 +653,7 @@ packages:
       '@safe-global/safe-apps-provider': ~0.18.6
       '@safe-global/safe-apps-sdk': ^9.1.0
       '@wagmi/core': 3.6.4
-      '@walletconnect/ethereum-provider': ^2.23.10
+      '@walletconnect/ethereum-provider': ^2.21.1
       accounts: ~0.14
       typescript: '>=5.9.3'
       viem: 2.x
